@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/layout_margin_lr"
+        android:layout_marginRight="@dimen/layout_margin_lr"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_snak"
+            style="@style/StyleButton"
+            android:text="Snackbar show" />
+
+        <Button
+            android:id="@+id/btn_snak2"
+            style="@style/StyleButton"
+            android:text="Snackbar set Text / Color" />
+
+        <Button
+            android:id="@+id/btn_snak3"
+            style="@style/StyleButton"
+            android:text="Snackbar set Background" />
+
+        <Button
+            android:id="@+id/btn_snak4"
+            style="@style/StyleButton"
+            android:text="Snackbar add layout" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Android EditText" />
+
+        <!--这两种区别在于横屏时，TextInputEditText 形式的 hint 依然可见，但这个还未验证通过-->
+        <!--Condition one-->
+        <!--app:passwordToggleDrawable="@mipmap/ic_launcher" 设置显示密码的按钮图片 依赖于 textPassword-->
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/til_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:counterEnabled="true"
+            app:counterMaxLength="12"
+            app:errorEnabled="true">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/tie_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="TextInputLayout + TextInputEditText"
+                android:inputType="textPassword" />
+        </android.support.design.widget.TextInputLayout>
+
+        <!--Condition two-->
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="TextInputLayout + Android EditText"
+                android:inputType="text" />
+        </android.support.design.widget.TextInputLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>

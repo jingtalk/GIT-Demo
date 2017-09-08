@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">GIT-DEMO</string>
+
+    <!--Demos name in list-->
+    <string name="demo_test_in_activity">Test in Activity</string>
+    <string name="demo_test_in_fragment">Test in Fragment</string>
+    <string name="demo_test_in_listview">Test in ListView and Adapter</string>
+
+</resources>

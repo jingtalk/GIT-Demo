@@ -1,0 +1,39 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    defaultConfig {
+        applicationId "com.jing.sample"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testCompile 'junit:junit:4.12'
+
+    compile rootProject.ext.supportDependencies.appCompat
+    compile rootProject.ext.supportDependencies.constraint
+    compile rootProject.ext.supportDependencies.androidAnnotations
+    compile rootProject.ext.supportDependencies.percent
+    compile rootProject.ext.supportDependencies.design
+    compile rootProject.ext.supportDependencies.v4
+
+    compile rootProject.ext.presentationDependencies.butterKnife
+    annotationProcessor rootProject.ext.presentationDependencies.butterKnife_compiler
+}
