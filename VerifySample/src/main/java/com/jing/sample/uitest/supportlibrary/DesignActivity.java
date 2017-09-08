@@ -174,7 +174,6 @@ public class DesignActivity extends BaseActivity {
         });
     }
 
-
     private ArrayList<String> mTitleList = new ArrayList<String>() {
         {
             add("推荐");
