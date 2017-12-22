@@ -1,4 +1,4 @@
-package com.jing.sample.uitest.supportlibrary;
+package com.jing.sample.testui.supportlibrary;
 
 import android.content.Intent;
 import android.graphics.Color;

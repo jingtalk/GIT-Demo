@@ -8,8 +8,8 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.jing.sample.R;
-import com.jing.sample.uitest.supportlibrary.DesignActivity;
-import com.jing.sample.uitest.supportlibrary.PercentActivity;
+import com.jing.sample.testui.supportlibrary.DesignActivity;
+import com.jing.sample.testui.supportlibrary.PercentActivity;
 
 import java.util.ArrayList;
 

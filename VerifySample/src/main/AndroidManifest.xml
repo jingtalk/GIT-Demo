@@ -19,9 +19,9 @@
         </activity>
         <activity android:name=".notimportant.TestActivity" />
         <activity android:name=".notimportant.BaseActivity" />
-        <activity android:name=".uitest.supportlibrary.PercentActivity" />
+        <activity android:name=".testui.supportlibrary.PercentActivity" />
         <activity
-            android:name=".uitest.supportlibrary.DesignActivity"
+            android:name=".testui.supportlibrary.DesignActivity"
             android:windowSoftInputMode="stateHidden" />
     </application>
 
