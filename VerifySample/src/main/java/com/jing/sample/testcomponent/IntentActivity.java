@@ -4,8 +4,8 @@ import com.jing.sample.notimportant.BaseActivity;
 
 /**
  * <pre>
- *     author : hakimhuang
- *     e-mail : hakimhuang@tencent.com
+ *     author : jinghuang
+ *     e-mail : jinghuang1130@yahoo.com
  *     time   : 2017/12/22
  *     desc   : 功能
  *     version: 1.0
