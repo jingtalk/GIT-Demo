@@ -185,6 +185,10 @@ DROP TABLE tbClientAppVersion_1137
 // 建表 1135 gms
 CREATE TABLE `tbClientAppVersion_1135_gms` AS SELECT `app`, `game`, `version`, SUM(`count`) AS `count` FROM `dbiTOP_ClientMonitor`.`tbClientAppVersion` where version <> '' AND `game`=1135 AND `app`='gms' GROUP BY `version` DESC
 
+// 插入数据
+ INSERT INTO dbiTOP_ClientMonitor.tbClientAppVersion_1135_gms (app,game,version,count) VALUES ('s', '11', 's', 's');
+ 
+
 // 查询 app 这一列并去重
 SELECT DISTINCT `app` FROM `dbiTOP_ClientMonitor`.`tbClientAppVersion` WHERE 1
 
@@ -209,6 +213,8 @@ SELECT `app`, `game`, SUM(`count`) AS `count` FROM `dbiTOP_ClientMonitor`.`tbCli
 DROP TABLE `tb_test`
 
 
+// PHP 删除字符串中的括号及内容 ADB(12143123) 返回 ADB
+return preg_replace('/\(.*?\)/', '', $_val);
 ```
 
 
