@@ -113,6 +113,8 @@ if(!FacebookSdk.isInitialized()){
 
 ### 2> sendMessage 拉起
 
+**Facebook 链接制作工具入口已经关闭**
+
 配置步骤：
 
 - [创建应用链接](https://developers.facebook.com/quickstarts/423362744481374/?platform=app-links-host) 中创建 fb 开头的应用链接:
@@ -322,4 +324,33 @@ if (isValid) {
     startActivity(intent);
 }
 ```
+
+### 5> H5 拉起
+
+这种方式同上面 3> 调用方式的网页版本，即自己写一个H5网页
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Just For iTop Client Group</title>
+</head>
+<body onload="jumpToURLScheme()">
+
+<script>
+function jumpToURLScheme(){
+    window.location = "xl://goods:8888/goodsDetail?goodsId=10011002";
+}
+</script>
+
+</body>
+</html>
+```
+
+假设这个 H5 网页的网络访问地址为
+
+*https://open.qq.com/itop_client_test/urlschemetest.html*
+
+则可以使用上面这个url来拉起相应的app。
 

@@ -23,6 +23,7 @@
         <activity
             android:name=".testui.supportlibrary.DesignActivity"
             android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".testcomponent.IntentActivity" />
     </application>
 
 </manifest>

@@ -1,5 +1,7 @@
 package com.jing.sample.testcomponent;
 
+import android.os.Bundle;
+
 import com.jing.sample.notimportant.BaseActivity;
 
 /**
@@ -13,4 +15,12 @@ import com.jing.sample.notimportant.BaseActivity;
  */
 public class IntentActivity extends BaseActivity {
 
+    private static final String TAG = "IntentActivity";
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        String test = "";
+
+    }
 }
