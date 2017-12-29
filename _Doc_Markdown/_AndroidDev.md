@@ -215,11 +215,15 @@ DROP TABLE `tb_test`
 
 // PHP 删除字符串中的括号及内容 ADB(12143123) 返回 ADB
 return preg_replace('/\(.*?\)/', '', $_val);
+
+
+SELECT `date`,`platform`,`game`,`event`,`code`,`tcode`, SUM(`count`) AS `count`, `updated` FROM `dbiTOP_ClientMonitor`.`tbClientReturnCode` WHERE `platform` = 1 AND `game` > 11 GROUP BY `game`, `event`, `code`
+
 ```
 
 
 
-# 六、语言
+# 六、编程
 
 ## 1. 编译性语言 + 解释性语言
 
@@ -258,6 +262,40 @@ Python是解释型语言，你的代码在执行时会一行一行地翻译成CP
 ### 3> 编译型语言
 
 [编译型语言](https://baike.baidu.com/item/%E7%BC%96%E8%AF%91%E5%9E%8B%E8%AF%AD%E8%A8%80)：程序在执行之前需要一个专门的编译过程，把程序编译成 为机器语言的文件，运行时不需要重新翻译，直接使用[编译](https://baike.baidu.com/item/%E7%BC%96%E8%AF%91)的结果就行了。程序执行效率高，依赖编译器，跨平台性差些。如C、C++、Delphi等
+
+
+
+# 七、Python
+
+[Python教程](https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000)
+
+## 1. Python 介绍
+
+在Python交互式模式下，可以直接输入代码，然后执行，并立刻得到结果。
+
+在命令行模式下，可以直接运行`.py`文件。
+
+用文本编辑器写Python程序，然后保存为后缀为`.py`的文件，就可以用Python直接运行这个程序了。
+
+Python的交互模式和直接运行`.py`文件有什么区别呢？
+
+直接输入`python`进入交互模式，相当于启动了Python解释器，但是等待你一行一行地输入源代码，每输入一行就执行一行。
+
+直接运行`.py`文件相当于启动了Python解释器，然后一次性把`.py`文件的源代码给执行了，你是没有机会以交互的方式输入源代码的。
+
+用Python开发程序，完全可以一边在文本编辑器里写代码，一边开一个交互式命令窗口，在写代码的过程中，把部分代码粘到命令行去验证，事半功倍！前提是得有个27'的超大显示器！
+
+`input()`和`print()`是在命令行下面最基本的输入和输出。
+
+## 2. Python 基础
+
+Python使用缩进来组织代码块，请务必遵守约定俗成的习惯，坚持使用4个空格的缩进。
+
+以`#`开头的语句是注释，当语句以冒号`:`结尾时，缩进的语句视为代码块。
+
+Python程序是大小写敏感的
+
+
 
 
 

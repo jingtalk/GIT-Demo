@@ -18,6 +18,8 @@
 
 ## 3. 应用组件
 
+### 1> Intent 及 过滤器
+
 PendingIntent 是 Android 提供的一种用于外部程序调起自身程序的能力，生命周期不与主程序相关。外部程序通过 PendingIntent 只能调用起三种组件：
 
 - Activity
@@ -31,6 +33,169 @@ PendingIntent 的使用场景有三个：
 - 在桌面显示 Widget
 
 
+### 2> [通用Intent](https://developer.android.com/guide/components/intents-common.html)
+
+- 闹钟
+
+  - 创建闹钟
+
+    ```java
+    public void createAlarm(String message, int hour, int minutes) {
+        Intent intent = new Intent(AlarmClock.ACTION_SET_ALARM)
+                .putExtra(AlarmClock.EXTRA_MESSAGE, message)
+                .putExtra(AlarmClock.EXTRA_HOUR, hour)
+                .putExtra(AlarmClock.EXTRA_MINUTES, minutes);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        } 
+    } 
+    ```
+
+
+  - 创建定时器
+
+  - 显示所有闹钟
+
+- 日历
+
+  - 添加日历事件
+
+- 相机
+
+  - 拍摄照片或视频并将其返回
+  - 以静态图像模式启动相机应用
+  - 以视频模式启动相机应用
+
+- 联系人/人员应用
+
+  - 选择联系人
+  - 选择特定联系人数据
+  - 查看联系人
+  - 编辑现有联系人
+  - 插入联系人
+
+- 电子邮件
+  - 撰写带有可选附件的电子邮件
+
+- 文件存储 
+
+  - **检索特定类型的文件**
+
+    用户可以不选择现有照片，而是用相机拍摄新照片
+
+  - **打开特定类型的文件**
+
+- 本地操作
+
+  - 叫车 - 仅限 Android Wear
+
+- 地图
+
+  - 显示地图上的位置
+
+- 音乐或视频
+
+  - 播放媒体文件
+  - **基于搜索查询播放音乐**
+
+- 新笔记
+
+  - 创建笔记
+
+- 电话
+
+  - 发起通话
+
+- 搜索
+
+  - 使用特定应用搜索，使自己的应用支持搜索
+  - 执行网页搜索
+
+- 设置
+
+  - 打开特定设置部分 - 如需在您的应用要求用户更改内容时打开某个系统设置屏幕，请使用下列其中一个 Intent 操作打开与操作名称对应的设置屏幕。
+
+- 发送短信
+
+  - 撰写带附件的短信/彩信
+
+- 网络浏览器
+
+  - 加载网址
+
+- 使用 Android 调试桥验证 Intent
+
+  ```bash
+  adb shell am start -a <ACTION> -t <MIME_TYPE> -d <DATA> \
+    -e <EXTRA_NAME> <EXTRA_VALUE> -n <ACTIVITY>
+  ```
+
+  比如
+
+  ```bash
+  adb shell am start -a android.intent.action.DIAL \
+    -d tel:555-5555 -n org.example.MyApp/.MyActivity
+  ```
+
+### 3> Activity
+
+- 生命周期
+
+  Activity 的**整个生命周期**发生在 `onCreate()` 调用与 `onDestroy()` 调用之间。
+
+  Activity 的**可见生命周期**发生在 `onStart()` 调用与 `onStop()` 调用之间。
+
+  Activity 的**前台生命周期**发生在 `onResume()` 调用与 `onPause()` 调用之间。
+
+  ![img](https://developer.android.com/images/activity_lifecycle.png)
+
+  ![img](https://developer.android.com/images/fundamentals/restore_instance.png)
+
+  生命周期回调的顺序经过明确定义，当两个 Activity 位于同一进程，并且由一个 Activity 启动另一个 Activity 时，其定义尤其明确。 以下是当 Activity A 启动 Activity B 时一系列操作的发生顺序：
+
+  1. Activity A 的 `onPause()` 方法执行。
+  2. Activity B 的 `onCreate()`、`onStart()` 和 `onResume()` 方法依次执行。（Activity B 现在具有用户焦点。）
+  3. 然后，如果 Activity A 在屏幕上不再可见，则其 `onStop()` 方法执行。
+
+- 片断 Fragment
+
+  - 片段必须始终嵌入在 Activity 中，其生命周期直接受宿主 Activity 生命周期的影响。
+
+  - 生命周期
+
+    ![img](https://developer.android.com/images/fragment_lifecycle.png)
+
+    ```java
+    // Create new fragment and transaction 
+    Fragment newFragment = new ExampleFragment(); 
+    FragmentTransaction transaction = getFragmentManager().beginTransaction();
+     
+    // Replace whatever is in the fragment_container view with this fragment, 
+    // and add the transaction to the back stack 
+    transaction.replace(R.id.fragment_container, newFragment);
+    transaction.addToBackStack(null); 
+     
+    // Commit the transaction 
+    transaction.commit(); 
+    ```
+
+  - 与 Activity 通信
+
+  - 创建对 Activity 的事件回调
+
+  - Activity 生命周期与片段生命周期之间的最显著差异在于它们在其各自返回栈中的存储方式。 默认情况下，Activity 停止时会被放入由系统管理的 Activity 返回栈（以便用户通过*返回*按钮回退到 Activity，[任务和返回栈](https://developer.android.com/guide/components/tasks-and-back-stack.html)对此做了阐述）。不过，仅当您在移除片段的事务执行期间通过调用 `addToBackStack()` 显式请求保存实例时，系统才会将片段放入由宿主 Activity 管理的返回栈。
+
+  - 生命周期对比
+
+    ![img](https://developer.android.com/images/activity_fragment_lifecycle.png)
+
+    ​
+
+## 4. 应用资源
+
+## 5. 应用清单
+
+## 6. 用户界面
 
 # Android Studio
 
