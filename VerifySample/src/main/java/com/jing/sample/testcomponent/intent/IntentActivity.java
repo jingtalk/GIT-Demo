@@ -1,4 +1,4 @@
-package com.jing.sample.testcomponent;
+package com.jing.sample.testcomponent.intent;
 
 import android.os.Bundle;
 

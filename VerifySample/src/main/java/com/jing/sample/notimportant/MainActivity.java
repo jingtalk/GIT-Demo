@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.jing.sample.R;
+import com.jing.sample.testcomponent.loadermanager.LoaderCustomActivity;
 import com.jing.sample.testui.supportlibrary.DesignActivity;
 import com.jing.sample.testui.supportlibrary.PercentActivity;
 
@@ -32,7 +33,7 @@ public class MainActivity extends BaseActivity {
 
         Resources resources = getResources();
         mSamples = new ArrayList<>();
-        mSamples.add(new ItemSample(R.string.demo_test_in_activity, R.string.demo_test_in_activity, TestActivity.class));
+        mSamples.add(new ItemSample("Test Load", "Custom load", LoaderCustomActivity.class));
         mSamples.add(new ItemSample(R.string.demo_test_in_activity, R.string.demo_test_in_activity, TestActivity.class));
         mSamples.add(new ItemSample("Test Percent Support Library", "PercentFrameLayout + PercentRelativeLayout", PercentActivity.class));
         mSamples.add(new ItemSample("Test Design Support Library", "Snackbar", DesignActivity.class));

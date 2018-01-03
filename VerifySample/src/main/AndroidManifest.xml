@@ -3,7 +3,7 @@
     package="com.jing.sample">
 
     <application
-        android:name=".notimportant.MyApp"
+        android:name="com.jing.sample.notimportant.MyApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -23,7 +23,8 @@
         <activity
             android:name=".testui.supportlibrary.DesignActivity"
             android:windowSoftInputMode="stateHidden" />
-        <activity android:name=".testcomponent.IntentActivity" />
+        <activity android:name=".testcomponent.intent.IntentActivity" />
+        <activity android:name=".testcomponent.loadermanager.LoaderCustomActivity"></activity>
     </application>
 
 </manifest>
