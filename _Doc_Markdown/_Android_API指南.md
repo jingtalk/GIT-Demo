@@ -191,9 +191,30 @@ PendingIntent 的使用场景有三个：
 
     ​
 
+- [加载器][https://developer.android.com/guide/components/loaders.html]
+
+- [任务和返回栈][https://developer.android.com/guide/components/tasks-and-back-stack.html]
+
+- [概览屏幕][https://developer.android.com/guide/components/recents.html]
+
+- ​
+
 ## 4. 应用资源
 
 ## 5. 应用清单
+
+每个应用的根目录中都必须包含一个 `AndroidManifest.xml` 文件（且文件名精确无误）。
+
+只有 `<manifest>` 和 `<application>` 元素是必需的，它们都必须存在并且只能出现一次。
+
+同一级别的元素通常不分先后顺序。例如，`<activity>`、`<provider>` 和 `<service>` 元素可以按任何顺序混合在一起。这条规则有两个主要例外：
+
+- `<activity-alias>` 元素必须跟在别名所指的 `<activity>` 之后。
+- `<application>` 元素必须是 `<manifest>` 元素内最后一个元素。换言之，`</manifest>` 结束标记必须紧接在 `</application>` 结束标记后。
+
+1. ​
+
+
 
 ## 6. 用户界面
 

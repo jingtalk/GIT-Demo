@@ -119,6 +119,7 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-3.3-all.zip
 |                   F11                    |             添加、移除标签             |
 |                Ctrl + F11                |          添加、移除书签(带标记)           |
 |               Shift + F11                |       显示所有的书签列表，并且是可以搜索的        |
+|             Alt + Shift + F              |             添加到收藏夹              |
 |        File \|Settings \| Keymap         |            设置、修改快捷键             |
 | File \| Settings  Editor \| Code Style \| Java |             设置命名前缀              |
 |      Alt + Enter \|  Ctrl + Alt + O      |          快速导包， 清除无用导包           |
