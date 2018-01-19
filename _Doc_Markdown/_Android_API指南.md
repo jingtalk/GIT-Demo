@@ -195,9 +195,34 @@ PendingIntent 的使用场景有三个：
 
 - [任务和返回栈][https://developer.android.com/guide/components/tasks-and-back-stack.html]
 
+  launchMode 属性指定有关应如何将 Activity 启动到任务中的指令。您可以分配给 launchMode 属性的启动模式共有四种：
+
+  - "standard"（默认模式）
+
+  - "singleTop"
+
+    如果当前任务的顶部已存在 Activity 的一个实例，则系统会通过调用该实例的 `onNewIntent()` 方法向其传送 Intent，而不是创建 Activity 的新实例。
+
+  - "singleTask"
+
+    1. 设置了"singleTask"启动模式的Activity，它在启动的时候，会先在系统中查找属性值affinity等于它的属性值taskAffinity的任务存在；如果存在这样的任务，它就会在这个任务中启动，否则就会在新任务中启动。因此，如果我们想要设置了"singleTask"启动模式的Activity在新的任务中启动，就要为它设置一个独立的taskAffinity属性值。
+    2. 如果设置了"singleTask"启动模式的Activity不是在新的任务中启动时，它会在已有的任务中查看是否已经存在相应的Activity实例，如果存在，就会把位于这个Activity实例上面的Activity全部结束掉，即最终这个Activity实例会位于任务的堆栈顶端中。
+
+  - "singleInstance"
+
+    1. 以singleInstance模式启动的Activity具有全局唯一性，即整个系统中只会存在一个这样的实例
+    2. 以singleInstance模式启动的Activity具有独占性，即它会独自占用一个任务，被他开启的任何activity都会运行在其他任务中（官方文档上的描述为，singleInstance模式的Activity不允许其他Activity和它共存在一个任务中）
+    3. 被singleInstance模式的Activity开启的其他activity，能够开启一个新任务，但不一定开启新的任务，也可能在已有的一个任务中开启(通过 taskAffinity 起作用)
+
+  **清理返回栈**
+
+  ​
+
 - [概览屏幕][https://developer.android.com/guide/components/recents.html]
 
-- ​
+  概览屏幕（也称为最新动态屏幕、最近任务列表或最近使用的应用）是一个系统级别 UI，其中列出了最近访问过的 Activity 和任务。
+
+  ​
 
 ## 4. 应用资源
 
