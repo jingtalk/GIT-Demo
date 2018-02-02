@@ -1,1 +1,3 @@
 include ':VerifySample'
+
+include ':KotlinSample'
