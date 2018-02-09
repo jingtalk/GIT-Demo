@@ -350,7 +350,7 @@ function jumpToURLScheme(){
 
 假设这个 H5 网页的网络访问地址为
 
-*https://open.qq.com/itop_client_test/urlschemetest.html*
+*https://open.itop.qq.com/itop_client_test/urlschemetest.html*
 
 则可以使用上面这个url来拉起相应的app。
 
