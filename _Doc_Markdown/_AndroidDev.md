@@ -20,6 +20,43 @@
 
   ![1122_unitylog](images/1122_unitylog.png)
 
+- unity 编译 android 三方插件时，需要注意在三方工程下，别忘了添加`project.properties` 文件
+
+  ```xml
+  android.library=true
+  ```
+
+  如果 unity 侧在获取组件的时候，引用了三方的版本号获取，这样会导致如下的错误。
+
+  ```bash
+  D/iMSDK: ╔═══════════════════════════════════════════════════════════════════════════
+  D/iMSDK: ║ IMSDKModules.getModule  (IMSDKModules.java:52)
+  D/iMSDK: ╟──────────────────────────────────────────────────────────────────────────
+  D/iMSDK: ║ try to get module : com.tencent.imsdk.android.login.twitter.TwitterLogin
+  D/iMSDK: ╚═══════════════════════════════════════════════════════════════════════
+  E/iMSDK: ╔════════════════════════════════════════════════════════════════════════
+  E/iMSDK: ║ IMSDKModules.getModule  (IMSDKModules.java:64)
+  E/iMSDK: ╟─────────────────────────────────────────────────────────────
+  E/iMSDK: ║ can't get instance of 'com.tencent.imsdk.android.login.twitter.TwitterLogin' : null
+  E/iMSDK: ╚════════════════════════════════════════════════════════
+  ```
+
+  原因是该插件的构造函数如下：
+
+  ```java
+  public TwitterLogin(Context context) {
+          super(context);
+
+          Twitter.initialize(context);
+          mSTBuilder = new InnerStat.Builder(
+                  context,
+                  BuildConfig.VERSION_NAME,
+                  com.twitter.sdk.android.core.BuildConfig.VERSION_NAME);
+      }
+  ```
+
+  此处的`com.twitter.sdk.android.core.BuildConfig.VERSION_NAME`为三方资源；
+
   ​
 
 ## 2. click 事件

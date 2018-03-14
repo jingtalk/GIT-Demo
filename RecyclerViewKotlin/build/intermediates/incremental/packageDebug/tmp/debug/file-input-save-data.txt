@@ -1,0 +1,7 @@
+#Internal package file, do not edit.
+#Wed Mar 07 12:33:06 CST 2018
+0.baseType=DIRECTORY
+0.base=F\:\\JING\\GIT-Demo\\RecyclerViewKotlin\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+0.path=classes.dex
+0.set=DEX
+count=1

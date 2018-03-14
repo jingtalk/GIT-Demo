@@ -8,9 +8,10 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.jing.sample.R;
-import com.jing.sample.testcomponent.loadermanager.LoaderCustomActivity;
-import com.jing.sample.testui.supportlibrary.DesignActivity;
-import com.jing.sample.testui.supportlibrary.PercentActivity;
+import com.jing.sample.test.component.loadermanager.LoaderCustomActivity;
+import com.jing.sample.test.feature.crash.CrashExceptionActivity;
+import com.jing.sample.test.ui.supportlibrary.DesignActivity;
+import com.jing.sample.test.ui.supportlibrary.PercentActivity;
 
 import java.util.ArrayList;
 
@@ -37,6 +38,7 @@ public class MainActivity extends BaseActivity {
         mSamples.add(new ItemSample(R.string.demo_test_in_activity, R.string.demo_test_in_activity, TestActivity.class));
         mSamples.add(new ItemSample("Test Percent Support Library", "PercentFrameLayout + PercentRelativeLayout", PercentActivity.class));
         mSamples.add(new ItemSample("Test Design Support Library", "Snackbar", DesignActivity.class));
+        mSamples.add(new ItemSample("Test App Crash", "Monitor app itself crash", CrashExceptionActivity.class));
 
         mListView.setAdapter(new MainAdapter(this, mSamples));
     }

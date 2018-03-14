@@ -27,7 +27,7 @@ ext {
     minSdkVersion = 15
     targetSdkVersion = 21
     compileSdkVersion = 26
-    buildToolsVersion = '26.0.2'
+    buildToolsVersion = '27.0.1'
     constraintVersion = '1.0.2'
     percentVersion = '23.2.0'
 
@@ -36,6 +36,17 @@ ext {
     recyclerViewVersion = '21.0.3'
     rxJavaVersion = '2.0.2'
     rxAndroidVersion = '2.0.1'
+
+    // Third Channel Libraries
+    facebookVersion = '4.27.0'
+    googleVersion = '9.4.0'
+    twitterVersion = '3.1.1'
+
+    runnerVersion = "1.0.1"
+    rulesVersion = "1.0.1"
+    espressoVersion = "3.0.1"
+    archLifecycleVersion = "1.0.0"
+    archRoomVersion = "1.0.0"
 
     supportDependencies = [
             v4 : "com.android.support:support-v4:${buildToolsVersion}",
@@ -54,6 +65,22 @@ ext {
             recyclerView:       "com.android.support:recyclerview-v7:${recyclerViewVersion}",
             rxJava:             "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
             rxAndroid:          "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}"
+    ]
+
+    channelDespendencies = [
+            facebookLogin: "com.facebook.android:facebook-login:${facebookVersion}",
+            facebookShare: "com.facebook.android:facebook-share:${facebookVersion}",
+            facebookCore: "com.facebook.android:facebook-core:${facebookVersion}",
+            googleAuth: "com.google.android.gms:play-services-auth:${googleVersion}",
+            googleGames: "com.google.android.gms:play-services-games:${googleVersion}",
+            googleGCM : "com.google.android.gms:play-services-gcm:${googleVersion}",
+            googleAds : "com.google.android.gms:play-services-ads:${googleVersion}",
+            googleBasement : "com.google.android.gms:play-services-basement:${googleVersion}",
+            googleBase : "com.google.android.gms:play-services-base:${googleVersion}",
+            firebaseCore :"com.google.firebase:firebase-core:${googleVersion}",
+            firebaseMessage : "com.google.firebase:firebase-messaging:${googleVersion}",
+            twitterCore : "com.twitter.sdk.android:twitter-core:${twitterVersion}",
+            twitterComposer : "com.twitter.sdk.android:tweet-composer:${twitterVersion}"
     ]
 }
 

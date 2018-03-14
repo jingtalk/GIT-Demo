@@ -4,6 +4,8 @@ import android.app.Application;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
+import com.jing.sample.test.feature.crash.CrashHandler;
+
 /**
  * 功能描述:
  *
@@ -19,6 +21,8 @@ public class MyApp extends Application {
     public void onCreate() {
         super.onCreate();
         mAppCtx = getApplicationContext();
+
+        CrashHandler.getInstance().init(getApplicationContext());
     }
 
     @NonNull

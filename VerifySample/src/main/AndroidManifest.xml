@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jing.sample">
 
+    <!--
+    android:name="com.jing.sample.notimportant.MyApp"
+    android:name=".test.feature.crash.CrashApplication"
+    -->
     <application
         android:name="com.jing.sample.notimportant.MyApp"
         android:allowBackup="true"
@@ -19,12 +23,13 @@
         </activity>
         <activity android:name=".notimportant.TestActivity" />
         <activity android:name=".notimportant.BaseActivity" />
-        <activity android:name=".testui.supportlibrary.PercentActivity" />
+        <activity android:name=".test.ui.supportlibrary.PercentActivity" />
         <activity
-            android:name=".testui.supportlibrary.DesignActivity"
+            android:name=".test.ui.supportlibrary.DesignActivity"
             android:windowSoftInputMode="stateHidden" />
-        <activity android:name=".testcomponent.intent.IntentActivity" />
-        <activity android:name=".testcomponent.loadermanager.LoaderCustomActivity"></activity>
+        <activity android:name=".test.component.intent.IntentActivity" />
+        <activity android:name=".test.component.loadermanager.LoaderCustomActivity"></activity>
+        <activity android:name=".test.feature.crash.CrashExceptionActivity" />
     </application>
 
 </manifest>

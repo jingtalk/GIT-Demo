@@ -3,6 +3,7 @@ package com.jing.sample.notimportant;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,11 +15,15 @@ import com.jing.sample.R;
 public class BaseActivity extends AppCompatActivity implements View.OnClickListener {
 
     protected String TAG = this.getClass().getName();
+    public ConstraintLayout mMainLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(R.layout.activity_base);
+        mMainLayout = findViewById(R.id.activity_base);
     }
 
     @Override
@@ -54,5 +59,9 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
+    }
+
+    public String getTAG() {
+        return TAG;
     }
 }

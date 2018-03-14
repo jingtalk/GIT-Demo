@@ -6,4 +6,7 @@
     <string name="demo_test_in_fragment">Test in Fragment</string>
     <string name="demo_test_in_listview">Test in ListView and Adapter</string>
 
+    <string name="com.twitter.sdk.android.CONSUMER_KEY">D9Qhy7jWIxjVKKLBnfw78RSt9</string>
+    <string name="com.twitter.sdk.android.CONSUMER_SECRET">6O3Ag0EAdFQJLlY3GDbneTWeXooQBepYC8Z8a8nebfc4iQn66j</string>
+
 </resources>
