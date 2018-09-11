@@ -180,5 +180,12 @@ Android 支持 IntelliJ IDEA, Android Studio, and VS Code
 
 iOS 支持 XCode
 
+## 4. Reference
 
+1. [Fuchsia OS](https://www.oschina.net/news/93014/google-fuchsia-os)
+2. [为什么说Flutter是革命性的？](http://www.infoq.com/cn/articles/why-is-flutter-revolutionary)
+3. [Flutter技术概览](http://blog.csdn.net/ahence/article/details/79435378)
+4. [Flutter简介](http://blog.csdn.net/hekaiyou/article/details/77875777)
+5. [Flutter 框架介绍](http://blog.chengyunfeng.com/?p=1033)
+6. [如何评价 Google 的 Fuchsia、Android、iOS 跨平台应用框架 Flutter？](https://www.zhihu.com/question/50156415)
 
