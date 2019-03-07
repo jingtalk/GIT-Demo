@@ -1,4 +1,0 @@
-#Wed Mar 07 12:33:06 CST 2018
-base.0=F\:\\JING\\GIT-Demo\\RecyclerViewKotlin\\build\\intermediates\\transforms\\dexMerger\\debug\\0
-path.0=classes.dex
-renamed.0=classes.dex

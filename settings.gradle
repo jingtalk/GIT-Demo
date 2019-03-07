@@ -1,7 +1,1 @@
-include ':VerifySample'
-
-//include ':KotlinSample'
-//
-//include ':RecyclerViewKotlin'
-//
-//include ':HelloJNICallback'
+include ':app'

@@ -2,10 +2,10 @@
 
 buildscript {
     repositories {
-        jcenter()
         google()
+        jcenter()
     }
-    ext.kotlin_version = '1.2.21'
+    ext.kotlin_version = '1.3.21'
     dependencies {
         classpath 'com.android.tools.build:gradle:3.1.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
@@ -27,7 +27,7 @@ ext {
     minSdkVersion = 15
     targetSdkVersion = 21
     compileSdkVersion = 26
-    buildToolsVersion = '27.0.1'
+    buildToolsVersion = '27.0.3'
     constraintVersion = '1.0.2'
     percentVersion = '23.2.0'
 
@@ -42,6 +42,7 @@ ext {
     googleVersion = '9.4.0'
     twitterVersion = '3.1.1'
 
+    supportVersion = '27.0.1'
     runnerVersion = "1.0.1"
     rulesVersion = "1.0.1"
     espressoVersion = "3.0.1"
@@ -49,12 +50,12 @@ ext {
     archRoomVersion = "1.0.0"
 
     supportDependencies = [
-            v4 : "com.android.support:support-v4:${buildToolsVersion}",
-            appCompat : "com.android.support:appcompat-v7:${buildToolsVersion}",
-            design : "com.android.support:design:${buildToolsVersion}",
-            androidAnnotations: "com.android.support:support-annotations:${buildToolsVersion}",
+            v4 : "com.android.support:support-v4:${supportVersion}",
+            appCompat : "com.android.support:appcompat-v7:${supportVersion}",
+            design : "com.android.support:design:${supportVersion}",
+            androidAnnotations: "com.android.support:support-annotations:${supportVersion}",
             constraint: "com.android.support.constraint:constraint-layout:${constraintVersion}",
-            percent: "com.android.support:percent:${buildToolsVersion}"
+            percent: "com.android.support:percent:${supportVersion}"
     ]
 
     presentationDependencies = [
